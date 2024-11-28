@@ -1,6 +1,5 @@
+import 'package:boxxpress/widgets/button_empezar.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,31 +28,31 @@ class WelcomeScreen extends StatelessWidget {
         height: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('../assets/images/image.png'), // Imagen de fondo
+            image: AssetImage('../assets/images/image.png'),
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 50),
-            const Text(
-              'Box Xpress',
+            SizedBox(height: 20),
+            Text(
+              '   Box \n Xpress',
               style: TextStyle(
-                fontSize: 80,
+                fontSize: 60,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
+                fontFamily: "Parkinsans",
               ),
             ),
-            const SizedBox(height: 30),
-            const CircleAvatar(
-              radius: 80,
-              backgroundImage:
-                  AssetImage('../assets/images/carrito.png'), // Imagen del logo
+            SizedBox(height: 30),
+            CircleAvatar(
+              radius: 100,
+              backgroundImage: AssetImage('../assets/images/carrito.png'),
               backgroundColor: Colors.transparent,
             ),
-            const SizedBox(height: 30),
-            const Text(
+            SizedBox(height: 30),
+            Text(
               '¡Bienvenido a BoxXpress! Optimiza tus entregas con rastreo en tiempo real y soporte dedicado.\n¡Comencemos!',
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -61,47 +60,10 @@ class WelcomeScreen extends StatelessWidget {
                 color: Color.fromARGB(255, 242, 237, 237),
               ),
             ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    const Color.fromARGB(255, 12, 101, 145), // Color del botón
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                textStyle: const TextStyle(fontSize: 18),
-              ),
-              child: const Text(
-                'Empezar',
-                style: TextStyle(color: Colors.amberAccent),
-              ),
-            ),
-            const Spacer(),
-            BottomNavigationBar(
-              backgroundColor: Colors.black.withOpacity(0.8),
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.arrow_back, color: Colors.white),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon:
-                      Icon(Icons.home, color: Color.fromARGB(255, 181, 16, 16)),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.menu, color: Colors.white),
-                  label: '',
-                ),
-              ],
-              onTap: (index) {
-                // Manejo de la navegación de los íconos
-              },
+            SizedBox(height: 30),
+            ButtonEmpezar(),
+            Spacer(
+              flex: 40,
             ),
           ],
         ),

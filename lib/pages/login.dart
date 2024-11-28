@@ -1,5 +1,8 @@
-import 'package:boxxpress/pages/formulario.dart';
+import 'package:boxxpress/pages/forgot_password.dart';
+import 'package:boxxpress/pages/menu_principal.dart';
+import 'package:boxxpress/pages/registro.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -10,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool _obscureText = true;
+  bool _oscuroText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
             end: Alignment.bottomCenter,
           ),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -52,7 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
             TextField(
               decoration: InputDecoration(
                 labelText: 'Usuario',
+                labelStyle:
+                    const TextStyle(color: Colors.black), // Etiqueta en negro
                 hintText: 'tu usuario',
+                hintStyle: const TextStyle(
+                    color: Colors.black54), // Sugerencia en negro claro
+                filled: true,
+                fillColor: Colors.white, // Fondo blanco
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -60,20 +69,24 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const SizedBox(height: 16),
             TextField(
-              obscureText: _obscureText,
+              obscureText: _oscuroText,
               decoration: InputDecoration(
                 labelText: 'Password',
+                labelStyle: const TextStyle(color: Colors.black),
                 hintText: 'tu contraseña',
+                hintStyle: const TextStyle(color: Colors.black54),
+                filled: true,
+                fillColor: Colors.white,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
                 suffixIcon: IconButton(
                   icon: Icon(
-                    _obscureText ? Icons.visibility : Icons.visibility_off,
+                    _oscuroText ? Icons.visibility : Icons.visibility_off,
                   ),
                   onPressed: () {
                     setState(() {
-                      _obscureText = !_obscureText;
+                      _oscuroText = !_oscuroText;
                     });
                   },
                 ),
@@ -81,12 +94,20 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             const SizedBox(height: 16),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: Alignment.center,
               child: TextButton(
                 onPressed: () {
                   // Acción de 'Has olvidado tu contraseña'
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ForgotPasswordScreen()),
+                  );
                 },
-                child: const Text('Has olvidado tu contraseña'),
+                child: const Text(
+                  'Has olvidado tu contraseña',
+                  style: TextStyle(color: Color.fromARGB(255, 27, 27, 26)),
+                ),
               ),
             ),
             const SizedBox(height: 8),
@@ -95,7 +116,11 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    // Acción de 'Iniciar sesión'
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MenuPrincipal()),
+                    ); // Acción de 'Iniciar sesión'
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
@@ -121,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 12),
                   ),
-                  child: const Text('Registro'),
+                  child: const Text('    Registro   '),
                 ),
               ],
             ),
@@ -134,7 +159,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     // Acción de 'Sign Up'
                   },
-                  child: const Text('Sign Up'),
+                  child: const Text(
+                    'Sign Up',
+                    style: TextStyle(color: Color.fromARGB(255, 236, 232, 232)),
+                  ),
                 ),
               ],
             ),
@@ -148,24 +176,33 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton.icon(
-                  onPressed: () {
-                    // Acción de 'Sign in with Google'
-                  },
-                  icon: const Icon(Icons.g_translate, color: Colors.black),
-                  label: const Text('Sign in with Google'),
+                  onPressed: () {},
+                  icon: const FaIcon(FontAwesomeIcons.google,
+                      color: Color.fromARGB(255, 32, 32, 32)),
+                  label: const Text(
+                    'Iniciar con Google',
+                    style: TextStyle(
+                        color: Colors.black, fontFamily: "Parkinsans"),
+                  ),
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 12),
-                    side: const BorderSide(color: Colors.grey),
+                    side: const BorderSide(
+                        color: Color.fromARGB(255, 251, 251, 251)),
                   ),
                 ),
                 const SizedBox(width: 16),
                 OutlinedButton.icon(
-                  onPressed: () {
-                    // Acción de 'Sign in with Apple'
-                  },
-                  icon: const Icon(Icons.apple, color: Colors.black),
-                  label: const Text('Sign in with Apple'),
+                  onPressed: () {},
+                  icon: const FaIcon(
+                    FontAwesomeIcons.apple,
+                    color: Colors.black,
+                  ),
+                  label: const Text(
+                    'Iniciar con Apple',
+                    style: TextStyle(
+                        color: Colors.white, fontFamily: "Parkinsans"),
+                  ),
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 12),
@@ -173,27 +210,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ],
-            ),
-            const Spacer(),
-            BottomNavigationBar(
-              backgroundColor: Colors.black.withOpacity(0.8),
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.arrow_back, color: Colors.white),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home, color: Colors.white),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.menu, color: Colors.white),
-                  label: '',
-                ),
-              ],
-              onTap: (index) {
-                // Manejo de la navegación de los íconos
-              },
             ),
           ],
         ),
