@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
             Text(
               '   Box \n Xpress',
               style: TextStyle(
-                fontSize: 60,
+                fontSize: 50,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
                 fontFamily: "Parkinsans",
@@ -47,7 +47,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             CircleAvatar(
-              radius: 100,
+              radius: 130,
               backgroundImage: AssetImage('../assets/images/carrito.png'),
               backgroundColor: Colors.transparent,
             ),
@@ -71,3 +71,4 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+

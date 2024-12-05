@@ -20,6 +20,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     return Scaffold(
       appBar: const MyBar(),
       drawer: const Desplazante(), // Usando el Drawer
+
+      //Poner gridview
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(

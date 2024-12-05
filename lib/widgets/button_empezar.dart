@@ -11,26 +11,26 @@ class ButtonEmpezar extends StatefulWidget {
 class _ButtonEmpezarState extends State<ButtonEmpezar> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      label: const Text("Empezar"),
-      style: ElevatedButton.styleFrom(
-        foregroundColor: const Color.fromARGB(255, 231, 236, 239),
-        backgroundColor: const Color.fromARGB(255, 35, 117, 135),
-        shadowColor: const Color.fromARGB(255, 203, 148, 29),
-        elevation: 20,
-        textStyle: const TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      onLongPress: () {},
+    return ElevatedButton(
       onPressed: () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const LoginScreen()),
         );
       },
-      // child: const Text("Guardar")  "Ya no va cuando esta el (button.icon)"
+      style: ElevatedButton.styleFrom(
+        backgroundColor:
+            const Color.fromARGB(255, 68, 150, 191), // Color del botón
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+        textStyle: const TextStyle(fontSize: 18),
+      ),
+      child: const Text(
+        'Continuar',
+        style: TextStyle(
+            color: Color.fromARGB(255, 242, 240, 233),
+            fontFamily: "Parkinsans",
+            fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

@@ -89,7 +89,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              "Send to your email",
+                              "Enviar a tu email",
                               style:
                                   TextStyle(fontSize: 12, color: Colors.grey),
                             ),
@@ -130,7 +130,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              "Send to your phone",
+                              "Enviar a tu Celular",
                               style:
                                   TextStyle(fontSize: 12, color: Colors.grey),
                             ),

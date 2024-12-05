@@ -41,6 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
+                fontFamily: "Parkinsans",
               ),
             ),
             const SizedBox(height: 8),
@@ -49,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black54,
+                fontFamily: "Parkinsans",
               ),
             ),
             const SizedBox(height: 32),
@@ -56,10 +58,12 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: InputDecoration(
                 labelText: 'Usuario',
                 labelStyle:
-                    const TextStyle(color: Colors.black), // Etiqueta en negro
+                    const TextStyle(color: Colors.black), // Etiqueta color
                 hintText: 'tu usuario',
                 hintStyle: const TextStyle(
-                    color: Colors.black54), // Sugerencia en negro claro
+                  color: Colors.black54,
+                  fontFamily: "Parkinsans",
+                ),
                 filled: true,
                 fillColor: Colors.white, // Fondo blanco
                 border: OutlineInputBorder(
@@ -157,7 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const Text("No tienes una cuenta?"),
                 TextButton(
                   onPressed: () {
-                    // Acción de 'Sign Up'
+                    // Accion de 'Ingresar'
                   },
                   child: const Text(
                     'Sign Up',
