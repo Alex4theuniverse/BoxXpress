@@ -1,4 +1,5 @@
 import 'package:boxxpress/pages/forgot_password.dart';
+import 'package:boxxpress/pages/menu_app.dart';
 import 'package:boxxpress/pages/menu_principal.dart';
 import 'package:boxxpress/pages/registro.dart';
 import 'package:flutter/material.dart';
@@ -122,8 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const MenuPrincipal()),
+                      MaterialPageRoute(builder: (context) => const MenuApp()),
                     ); // Acción de 'Iniciar sesión'
                   },
                   style: ElevatedButton.styleFrom(
